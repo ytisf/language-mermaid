@@ -1,0 +1,17 @@
+{
+  "name": "language-mermaid",
+  "version": "0.0.1",
+  "description": "Mermaid syntaxing language support in Atom",
+  "engines": {
+    "atom": "*"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ytisf/language-mermaid.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ytisf/language-mermaid/issues"
+  },
+  "license": "MIT"
+}

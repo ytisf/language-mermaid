@@ -1,0 +1,100 @@
+'scopeName': 'source.mermaid'
+'name': 'Mermaid'
+'fileTypes': ['mm', 'mermaid']
+
+'patterns': [
+
+    # Tag Numeric Values (int, float)
+    {
+    'match': '\\b(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))\\b'
+    'name': 'constant.numeric.mermaid'
+    }
+
+    # Subgraph Tag
+    {
+      'match': '\\b(subgraph)\\s+([A-Za-z\\ 0-9]+)'
+      'captures':
+        '1':
+            'name': 'keyword.control.mermaid'
+        '2':
+            'name': 'entity.name.function.mermaid'
+    'name': 'meta.function.mermaid'
+    }
+
+    # Graph Tag
+    {
+      'match': '\\b(graph)\\s+([A-Za-z\\ 0-9]+)'
+      'captures':
+        '1':
+            'name': 'keyword.control.mermaid'
+        '2':
+            'name': 'entity.name.function.mermaid'
+    'name': 'meta.function.mermaid'
+    }
+
+    # Tag 'end' and directions
+    {
+      'match': '\\b(end|RB|BT|RL|TD|LR)\\b'
+      'name': 'keyword.control.mermaid'
+    }
+
+    # Objects with parentasis
+    {
+      'match': '\\b([A-Z0-9a-z\\_]+)[\\[\\(]{1,2}(.+)[\\]\\)]{1,2}'
+      'captures':
+        '1':
+            'name': 'punctuation.definition.tag.mermaid'
+        '2':
+            'name': 'punctuation.definition.variable.mermaid'
+    'name': 'meta.variable.mermaid'
+    }
+
+    # Decision Tree
+    {
+      'match': '\\b([A-Z0-9a-z\\_]+)[\\{]{1,2}(.+)[\\}]{1,2}'
+      'captures':
+        '1':
+            'name': 'punctuation.definition.tag.mermaid'
+        '2':
+            'name': 'punctuation.definition.parameters.mermaid'
+    'name': 'meta.variable.mermaid'
+    }
+
+    # Arrows without text
+    {
+      'match': '\\b([A-Z0-9a-z\\_]+)\\s+?([\\-\\.\\>\\<]{2,5})\\s+?([A-Z0-9a-z\\_]+)'
+      'captures':
+        '1':
+            'name': 'punctuation.definition.string.mermaid'
+        '2':
+            'name': 'keyword.other.special-method.mermaid'
+        '3':
+            'name': 'punctuation.definition.string.mermaid'
+    'name': 'meta.variable.mermaid'
+    }
+
+    # Arrows with text
+    {
+      'match': '\\b([A-Z0-9a-z\\_]+)\\s?+([\\-\\.\\>\\<]{2,4})\\s?+([\\|])([A-Za-z\\ 0-9\\_]+)([\\|])\\s?+([a-zA-Z0-9\\ \\_]+)'
+      'captures':
+        '1':
+            'name': 'punctuation.definition.string.mermaid'
+        '2':
+            'name': 'keyword.other.special-method.mermaid'
+        '4':
+            'name': 'keyword.control.import.mermaid'
+        '6':
+            'name': 'keyword.control.exception.mermaid'
+    'name': 'meta.variable.mermaid'
+    }
+
+    # Comment Tag
+    {
+      'match': '\\b([\\%]{2}\\s?.+)\\b'
+      'captures':
+          '1':
+            'name': 'punctuation.definition.comment.mermaid'
+      'name': 'punctuation.definition.comment.mermaid'
+    }
+
+]

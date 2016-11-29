@@ -1,0 +1,8 @@
+'.source.mermaid':
+  'editor':
+    'tabLength': 4
+    'softTabs': true
+    'autoIndentOnPaste': false
+    'commentStart': '%% '
+    'increaseIndentPattern': '(subgraph|graph)\\s[A-Za-z0-9\\-\\_\\ ]+'
+    'decreaseIndentPattern': '(end)'
