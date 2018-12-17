@@ -1,6 +1,6 @@
 'scopeName': 'source.mermaid'
 'name': 'Mermaid'
-'fileTypes': ['mm', 'mermaid']
+'fileTypes': ['mm', 'mermaid', 'mmd']
 
 'patterns': [
 
