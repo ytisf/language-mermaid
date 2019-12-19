@@ -12,7 +12,7 @@
 
     # Subgraph Tag
     {
-      'match': '\\b(subgraph)\\s+([A-Za-z\\ 0-9]+)'
+      'match': '\\b(subgraph)\\s+([\\w\\ 0-9]+)'
       'captures':
         '1':
             'name': 'keyword.control.mermaid'
@@ -23,7 +23,7 @@
 
     # Graph Tag
     {
-      'match': '\\b(graph)\\s+([A-Za-z\\ 0-9]+)'
+      'match': '\\b(graph)\\s+([\\w\\ 0-9]+)'
       'captures':
         '1':
             'name': 'keyword.control.mermaid'
@@ -40,7 +40,7 @@
 
     # Objects with parentasis
     {
-      'match': '\\b([A-Z0-9a-z\\_]+)[\\[\\(]{1,2}(.+)[\\]\\)]{1,2}'
+      'match': '\\b([\\w0-9\\_]+)[\\[\\(]{1,2}(.+)[\\]\\)]{1,2}'
       'captures':
         '1':
             'name': 'punctuation.definition.tag.mermaid'
@@ -51,7 +51,7 @@
 
     # Decision Tree
     {
-      'match': '\\b([A-Z0-9a-z\\_]+)[\\{]{1,2}(.+)[\\}]{1,2}'
+      'match': '\\b([\\w0-9\\_]+)[\\{]{1,2}(.+)[\\}]{1,2}'
       'captures':
         '1':
             'name': 'punctuation.definition.tag.mermaid'
@@ -62,7 +62,7 @@
 
     # Arrows without text
     {
-      'match': '\\b([A-Z0-9a-z\\_]+)\\s+?([\\-\\.\\>\\<]{2,5})\\s+?([A-Z0-9a-z\\_]+)'
+      'match': '\\b([\\w0-9\\_]+)\\s+?([\\-\\.\\>\\<]{2,5})\\s+?([\\w0-9\\_]+)'
       'captures':
         '1':
             'name': 'punctuation.definition.string.mermaid'
@@ -75,7 +75,7 @@
 
     # Arrows with text
     {
-      'match': '\\b([A-Z0-9a-z\\_]+)\\s?+([\\-\\.\\>\\<]{2,4})\\s?+([\\|])([A-Za-z\\ 0-9\\_]+)([\\|])\\s?+([a-zA-Z0-9\\ \\_]+)'
+      'match': '\\b([\\w0-9\\_]+)\\s?+([\\-\\.\\>\\<]{2,4})\\s?+([\\|])([\\w\\ 0-9\\_]+)([\\|])\\s?+([\\w0-9\\ \\_]+)'
       'captures':
         '1':
             'name': 'punctuation.definition.string.mermaid'
@@ -96,5 +96,34 @@
             'name': 'punctuation.definition.comment.mermaid'
       'name': 'punctuation.definition.comment.mermaid'
     }
+
+    # Arrows with text (and might be dots.)
+    {
+      'match': '\\b([0-9\\w\\_]+)\s?(\\-[\\w0-9\\.\\_\\-]+)\-[\\>\\<\\-]\\s?([\\w0-9\\_]+)'
+      'captures':
+        '1':
+            'name': 'punctuation.definition.string.mermaid'
+        '2':
+            'name': 'keyword.other.special-method.mermaid'
+        '3':
+            'name': 'keyword.control.import.mermaid'
+    'name': 'meta.variable.mermaid'
+    }
+
+    # Dotted lines
+    {
+      'match': '\\b([\\w0-9\\_]+)\\s([\\-\\.\\>\<]{3,6})\\s?([\\w0-9\\_]+)'
+      'captures':
+        '1':
+            'name': 'punctuation.definition.string.mermaid'
+        '2':
+            'name': 'keyword.other.special-method.mermaid'
+        '4':
+            'name': 'keyword.control.import.mermaid'
+        '6':
+            'name': 'keyword.control.exception.mermaid'
+    'name': 'meta.variable.mermaid'
+    }
+
 
 ]
