@@ -125,5 +125,86 @@
     'name': 'meta.variable.mermaid'
     }
 
+    # comment
+    {
+    'match': '^\\s*@@.*$'
+    'name': 'comment'
+    }
 
+    # keyword classDiagram
+    {
+      "match": 'classDiagram'
+      'name': 'keyword.control.mermaid'
+    }
+
+    # define classname
+    {
+      "match": "(class) (\\w*)"
+      "captures": {
+        "1": {
+          "name": "keyword.control.mermaid"
+             }
+        "2": {
+          "name": "entity.name.type.class.mermaid"
+        }
+      }
+    }
+
+    # classname and colon before define member or method
+    {
+      "match": "(\\w*)\\s?(:)"
+      "captures": {
+        "1": {
+          "name": "entity.name.function.mermaid"
+        }
+        "2": {
+          "name": "punctuation.section.class.begin.mermaid"
+        }
+      }
+    }
+
+    # inheritance arrow
+    {
+      "match": "(\\w*)\\s?(<\\|--)\\s?(\\w*)"
+      "captures": {
+        "1": {
+          "name": "entity.name.function.mermaid"
+             }
+        "2": {
+          "name": "keyword.operator.math.mermaid"
+             }
+        "3": {
+          "name": "entity.name.function.mermaid"
+        }
+      }
+    }
+
+    # member
+    {
+      "match": "(\\+|-)(\\w*)\\s(\\w*)"
+      "captures": {
+        "1": {
+          "name": "keyword.operator.math.mermaid"
+        }
+        "2": {
+          "name": "keyword.type.mermaid"
+        }
+        "3": {
+          "name": "variable"
+        }
+      }
+    }
+
+    # method
+    {
+      "match": "(\\+|-)(\\w*\\(\\))"
+      "captures": {
+        "1": {
+          "name": "keyword.operator.math.mermaid"
+        }
+        "2": {
+          "name": "string"
+        }
+      }
+    }
 ]
