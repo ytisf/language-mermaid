@@ -1,1 +1,3 @@
+/grammars/* linguist-documentation=true
+/settings/* linguist-documentation=true
 *.cson linguist-detectable=true
