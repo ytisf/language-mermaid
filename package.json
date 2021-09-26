@@ -5,6 +5,11 @@
   "engines": {
     "atom": "*"
   },
+  "keywords": [
+    "mermaid",
+    "markdown",
+    "grammar"
+  ],
   "dependencies": {},
   "repository": {
     "type": "git",
@@ -13,5 +18,5 @@
   "bugs": {
     "url": "https://github.com/ytisf/language-mermaid/issues"
   },
-  "license": "MIT"
+  "license": "GPL"
 }
